@@ -54,8 +54,7 @@
  
 // Some stuff for the actual set
 #define DISTANCE_FROM_ORIGIN 2 //per definition of the Mandelbrot set   
-#define MAX_STEPS 255 //I think we can change this, but it was the
-   //default for the escapeSteps activity
+#define MAX_STEPS 255
  
 //And some stuff for humans
 #define TRUE 1
@@ -504,17 +503,17 @@ void writePixels(FILE *stream, complex centre, int zoom) {
             //p.blue = numberOfSteps;
 
             if (numberOfSteps == MAX_STEPS) {
-               p.red = 0;
-               p.green = 0;
                p.blue = 0;
-            } else if (numberOfSteps == 1) {
+               p.green = 0;
+               p.red = 0;
+/*            } else if (numberOfSteps == 1) {
                p.red = 127;
                p.green = 127;
                p.blue = 127;
-            } else {
-               p.red = stepsToRed(numberOfSteps);
+*/            } else {
+               p.blue = stepsToRed(numberOfSteps);
                p.green = stepsToGreen(numberOfSteps);
-               p.blue = stepsToBlue(numberOfSteps);
+               p.red = stepsToBlue(numberOfSteps);
             }
 
          fwrite (&p, sizeof p, 1, stream);
