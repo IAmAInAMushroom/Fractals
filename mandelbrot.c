@@ -720,7 +720,7 @@ int waitForConnection (int serverSocket) {
 //Call all written test cases
 void testAllFunctions (void) {
    testExtractCoordinates();
-   testEscapeSteps();
+//   testEscapeSteps();
    testTenRaisedTo();
    testTwoRaisedTo();
 }
